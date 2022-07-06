@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS student (
 );
 
 CREATE INDEX idx_student_name ON student(first_name);
-CREATE INDEX idx_student_surname ON student(surname);
-CREATE INDEX idx_student_phone_numbers ON student(phone_numbers);
+CREATE INDEX idx_student_surname ON student USING HASH (surname);
+CREATE INDEX idx_student_phone_numbers ON student USING GIST (phone_numbers);
 
 CREATE TABLE IF NOT EXISTS subject (
   id serial not null primary key,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS subject (
   tutor varchar(45) not null
 );
 
-CREATE INDEX idx_subject_name ON subject(name);
+CREATE INDEX idx_subject_name ON subject USING GIN (name);
 
 CREATE TABLE IF NOT EXISTS results (
   student_id integer not null,
