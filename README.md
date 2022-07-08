@@ -27,3 +27,6 @@ project for resolving tasks from _**Database**_ module in scope of preparing to 
  - function that will return avarage mark for input subject name
  - function that will return student at "red zone" (red zone means at least 2 marks <=3)
  - snapshot that will contain next data: student name, student surname, subject name, mark
+
+[Index_investigation](https://github.com/OlehFliurkevych/pdp-database/blob/master/Index_investigation.pdf) file contains results of investigations.
+ - created and tested different types of index (B-tree, Hash, GiST)
